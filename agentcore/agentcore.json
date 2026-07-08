@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schema.agentcore.aws.dev/v1/agentcore.json",
+  "name": "MyAgent",
+  "version": 1,
+  "managedBy": "CDK",
+  "tags": {
+    "agentcore:created-by": "agentcore-cli",
+    "agentcore:project-name": "MyAgent"
+  },
+  "runtimes": [
+    {
+      "name": "MyAgent",
+      "build": "CodeZip",
+      "entrypoint": "main.py",
+      "codeLocation": "app/MyAgent/",
+      "runtimeVersion": "PYTHON_3_14",
+      "networkMode": "VPC",
+      "networkConfig": {
+        "subnets": [
+          "<SUBNET_ID>"
+        ],
+        "securityGroups": [
+          "<SECURITY_GROUP_ID>"
+        ]
+      },
+      "protocol": "HTTP",
+      "envVars": [
+        { "name": "LITELLM_API_BASE", "value": "<LITELLM_API_BASE_URL>" },
+        { "name": "LITELLM_API_KEY", "value": "<SET_IN_ENV_LOCAL>" },
+        { "name": "LITELLM_MODEL_ID", "value": "platform.research" },
+        { "name": "LITELLM_SSL_VERIFY", "value": "false" }
+      ]
+    }
+  ],
+  "memories": [],
+  "credentials": [],
+  "evaluators": [],
+  "onlineEvalConfigs": [],
+  "agentCoreGateways": [],
+  "policyEngines": [],
+  "configBundles": [],
+  "abTests": [],
+  "httpGateways": [],
+  "harnesses": [],
+  "datasets": [],
+  "payments": []
+}
