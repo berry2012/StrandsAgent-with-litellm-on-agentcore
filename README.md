@@ -1,4 +1,4 @@
-# Sample - LiteLLM Proxy with Strands Agents on Amazon Bedrock AgentCore Reference 
+# Strands Agents using LiteLLM Proxy on Amazon Bedrock AgentCore  
 
 A Strands Agents agent deployed to Amazon Bedrock AgentCore Runtime, using a **LiteLLM Proxy** as its model gateway instead of calling Bedrock directly. This allows centralized model routing, key management, and alias resolution through the proxy.
 
